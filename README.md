@@ -8,6 +8,7 @@ Version requirements:
 
 - Node.js: `v8.12.0`
 - Webpack: `v4.0.0`
+- html-webpack-plugin: `v4.3.0`
 
 ## Install
 
@@ -21,25 +22,25 @@ Options map more or less directly to the options provided by
 [nodesi](https://github.com/Schibsted-Tech-Polska/nodesi).
 
 ```js
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const EsiWebpackPlugin = require('esi-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const EsiWebpackPlugin = require("esi-webpack-plugin");
 
 module.exports = {
   // ...
   plugins: [
     new HtmlWebpackPlugin(),
     new EsiWebpackPlugin({
-      baseUrl: 'http://example.com',
+      baseUrl: "http://example.com",
       onError(src, err) {
         console.error(`Error when resolving ${src}: ${err}`);
       },
       processOptions: {
         headers: {
-          'Authorization': 'Basic Zm9vOmJhcgo='
-        }
-      }
-    })
-  ]
+          Authorization: "Basic Zm9vOmJhcgo=",
+        },
+      },
+    }),
+  ],
 };
 ```
 
